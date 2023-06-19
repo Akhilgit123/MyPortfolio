@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Contact-Akhil P A</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">@IamAkhil P A</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <span class="material-symbols-outlined">sort</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="http://127.0.0.1:5500/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/about.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/timeline.html"
+                >Timeline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/projects.html"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5500/contact.html"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Contact Me-->
+    <div class="container Contactsec">
+      <div class="row heading">
+        <div class="col-lg-12">
+          <h1>Contact Me</h1>
+        </div>
+      </div>
+      <div class="row formsec">
+        <div class="col-lg-12">
+          <form id="submit-form">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="InputName"
+                placeholder="Name"
+                name="Name"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="InputEmail"
+                placeholder="Enter Email"
+                name="Email"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="InputPhone"
+                placeholder="Mobile Number"
+                name="Phone"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                type="text-area"
+                class="form-control"
+                id="InputMessage"
+                placeholder="Message"
+                name="Message"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="outputMessage" id="outputMessage">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <div class="container footer">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h1>Follow Me</h1>
+        </div>
+        <div class="col-lg-12">
+          <div class="d-flex justify-content-center">
+            <a
+              href="https://www.facebook.com/akhil.pa.946?mibextid=ZbWKwL"
+              target="_blank"
+              ><i class="fa fa-facebook-square me-2" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://instagram.com/akhil_.pa?igshid=MzNlNGNkZWQ4Mg=="
+              target="_blank"
+              ><i class="fa fa-instagram me-2" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/akhil-p-a-967664222/"
+              target="_blank"
+              ><i class="fa fa-linkedin-square me-2" aria-hidden="true"></i
+            ></a>
+            <a href="https://github.com/Akhilgit123" target="_blank"
+              ><i class="fa fa-github-square me-2" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://twitter.com/AkhilPa60115539?t=sMGuH2HbFu6JozXDUZ7WoA&s=09"
+              target="_blank"
+              ><i class="fa fa-twitter me-2" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <p>Designed & Build by Akhil P A</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbxQEOlO2UKGZ7YY-Y-PF7TZ8mH1s9YNesLc4RaO5mlHkbrYBAWlO_jmrc5tqKhMc4U/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            document.getElementById("submit-form").reset();
+            document.getElementById("outputMessage").classList.add('success');
+            document.getElementById("outputMessage").innerHTML = "Message Send successfully✅";
+            return false
+          },
+          error: function (err) {
+            document.getElementById("outputMessage").classList.add('fail');
+            document.getElementById("outputMessage").innerHTML = "Our Server is busy right now. Try again later!"
+            return false
+          },
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
