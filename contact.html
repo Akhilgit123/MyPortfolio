@@ -21,27 +21,59 @@
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://akhilgit123.github.io/MyPortfolio/index.html">@IamAkhil P A</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a
+          class="navbar-brand"
+          href="https://akhilgit123.github.io/MyPortfolio/index.html"
+          >@IamAkhil P A</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="material-symbols-outlined">sort</span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://akhilgit123.github.io/MyPortfolio/index.html">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://akhilgit123.github.io/MyPortfolio/index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://akhilgit123.github.io/MyPortfolio/about.html">About</a>
+              <a
+                class="nav-link"
+                href="https://akhilgit123.github.io/MyPortfolio/about.html"
+                >About</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://akhilgit123.github.io/MyPortfolio/timeline.html">Timeline</a>
+              <a
+                class="nav-link"
+                href="https://akhilgit123.github.io/MyPortfolio/timeline.html"
+                >Timeline</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://akhilgit123.github.io/MyPortfolio/projects.html">Projects</a>
+              <a
+                class="nav-link"
+                href="https://akhilgit123.github.io/MyPortfolio/projects.html"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://akhilgit123.github.io/MyPortfolio/contact.html">Contact Me</a>
+              <a
+                class="nav-link"
+                href="https://akhilgit123.github.io/MyPortfolio/contact.html"
+                >Contact Me</a
+              >
             </li>
           </ul>
         </div>
@@ -64,7 +96,7 @@
                 class="form-control"
                 id="InputName"
                 placeholder="Name"
-                name="Name"
+                name="Name" required
               />
             </div>
             <div class="form-group">
@@ -73,7 +105,7 @@
                 class="form-control"
                 id="InputEmail"
                 placeholder="Enter Email"
-                name="Email"
+                name="Email" required
               />
             </div>
             <div class="form-group">
@@ -82,7 +114,7 @@
                 class="form-control"
                 id="InputPhone"
                 placeholder="Mobile Number"
-                name="Phone"
+                name="Phone" required
               />
             </div>
             <div class="form-group">
@@ -91,12 +123,11 @@
                 class="form-control"
                 id="InputMessage"
                 placeholder="Message"
-                name="Message"
+                name="Message" required
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <div class="outputMessage" id="outputMessage">
-            </div>
+            <div class="outputMessage" id="outputMessage"></div>
           </form>
         </div>
       </div>
@@ -152,14 +183,16 @@
           method: "post",
           success: function (response) {
             document.getElementById("submit-form").reset();
-            document.getElementById("outputMessage").classList.add('success');
-            document.getElementById("outputMessage").innerHTML = "Message Send successfully✅";
-            return false
+            document.getElementById("outputMessage").classList.add("success");
+            document.getElementById("outputMessage").innerHTML =
+              "Message Send successfully✅";
+            return false;
           },
           error: function (err) {
-            document.getElementById("outputMessage").classList.add('fail');
-            document.getElementById("outputMessage").innerHTML = "Our Server is busy right now. Try again later!"
-            return false
+            document.getElementById("outputMessage").classList.add("fail");
+            document.getElementById("outputMessage").innerHTML =
+              "Our Server is busy right now. Try again later!";
+            return false;
           },
         });
       });
